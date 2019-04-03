@@ -1,4 +1,4 @@
 schema_version: 20180708
 name: convertimg2pdf
-version: 0.0.9
+version: 0.0.1
 runtime: java8

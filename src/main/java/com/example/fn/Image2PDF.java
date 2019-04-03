@@ -197,28 +197,4 @@ public class Image2PDF {
         return new Dimension(new_width, new_height);
     }
 
-    private static void _convertImg2PDF(BufferedImage image) {
-        System.out.println("Converting image to PDF");
-
-        try (PDDocument doc = new PDDocument()) {
-            PDPage page = new PDPage();
-            doc.addPage(page);
-
-            PDImageXObject pdImage = LosslessFactory.createFromImage(doc, image);
-
-            // draw the image at full size at (x=20, y=20)
-            try (PDPageContentStream contents = new PDPageContentStream(doc, page)) {
-                // draw the image at full size at (x=20, y=20)
-                contents.drawImage(pdImage, 20, 20);
-
-                // to draw the image at half size at (x=20, y=20) use
-                // contents.drawImage(pdImage, 20, 20, pdImage.getWidth() / 2, pdImage.getHeight() / 2); 
-            }
-            doc.save("/tmp/output.pdf");
-            System.out.println("Image converted to PDF");
-
-        } catch (IOException ex) {
-            Logger.getLogger(Image2PDF.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
 }
