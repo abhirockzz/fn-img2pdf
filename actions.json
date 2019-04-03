@@ -1,0 +1,10 @@
+{
+  "actions": [
+    {
+      "actionType": "FAAS",
+      "description": "Invoke function on object store event",
+      "isEnabled": true,
+      "functionId": "enter function OCID here"
+    }
+  ]
+}
